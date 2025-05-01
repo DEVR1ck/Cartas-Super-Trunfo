@@ -1,1 +1,40 @@
+#include <stdio.h>
+#include <string.h>
 
+// Definindo uma struct para representar uma cidade
+typedef struct {
+    float pib;
+    float territorio;
+    char nome[20];
+} Cidade;
+
+Cidade lerCidade(int numero) {
+    Cidade c;
+
+    printf("Digite o PIB da cidade %d: ", numero);
+    scanf("%f", &c.pib);  // Corrigido: usar %f para float
+
+    printf("Digite o território da cidade %d: ", numero);
+    scanf("%f", &c.territorio);
+
+    printf("Digite o nome da cidade %d: ", numero);
+    scanf("%s", c.nome);
+
+    return c;
+}
+
+int main() {
+    Cidade cidade1 = lerCidade(1);
+    Cidade cidade2 = lerCidade(2);
+
+    // Comparação usando o PIB
+    if (cidade1.pib > cidade2.pib) {
+        printf("A Cidade %s ganhou a batalha!!!\n", cidade1.nome);
+    } else if (cidade2.pib > cidade1.pib) {
+        printf("A Cidade %s ganhou a batalha!!!\n", cidade2.nome);
+    } else {
+        printf("Empate entre as cidades %s e %s!\n", cidade1.nome, cidade2.nome);
+    }
+
+    return 0;
+}
