@@ -1,41 +1,40 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(){
-    int idade1;
-    float altura1;
-    char nome1[20];
+// Definindo uma struct para representar uma cidade
+typedef struct {
+    float pib;
+    float territorio;
+    char nome[20];
+} Cidade;
 
-    printf("Digite a sua idade para carta 1: ");
-    scanf("%d", &idade1);
-    printf("A idade é: %d\n", idade1);
+Cidade lerCidade(int numero) {
+    Cidade c;
 
-    printf("Digite sua altura para carta 1: ");
-    scanf("%f", &altura1);
-    printf("A sua altura é: %f\n", altura1);
+    printf("Digite o PIB da cidade %d: ", numero);
+    scanf("%f", &c.pib);  // Corrigido: usar %f para float
 
-    printf("Digite seu nome para carta 1: ");
-    scanf("%s", nome1);
-    printf("A o nome é: %s\n",nome1 );
+    printf("Digite o território da cidade %d: ", numero);
+    scanf("%f", &c.territorio);
 
+    printf("Digite o nome da cidade %d: ", numero);
+    scanf("%s", c.nome);
 
-
-
-    int idade2;
-    float altura2;
-    char nome2[20];
-
-    printf("Digite a sua idade para carta 2: ");
-    scanf("%d", &idade2);
-    printf("A idade é: %d\n", idade2);
-
-    printf("Digite sua altura para carta 2: ");
-    scanf("%f", &altura2);
-    printf("A sua altura é: %f\n", altura2);
-
-    printf("Digite seu nome para carta 2: ");
-    scanf("%s", nome2);
-    printf("A o nome é: %s\n",nome2);
-
-
+    return c;
 }
 
+int main() {
+    Cidade cidade1 = lerCidade(1);
+    Cidade cidade2 = lerCidade(2);
+
+    // Comparação usando o PIB
+    if (cidade1.pib > cidade2.pib) {
+        printf("A Cidade %s ganhou a batalha!!!\n", cidade1.nome);
+    } else if (cidade2.pib > cidade1.pib) {
+        printf("A Cidade %s ganhou a batalha!!!\n", cidade2.nome);
+    } else {
+        printf("Empate entre as cidades %s e %s!\n", cidade1.nome, cidade2.nome);
+    }
+
+    return 0;
+}
