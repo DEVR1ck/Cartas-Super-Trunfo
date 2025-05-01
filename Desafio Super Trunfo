@@ -1,1 +1,41 @@
+#include <stdio.h>
+
+int main(){
+    int idade1;
+    float altura1;
+    char nome1[20];
+
+    printf("Digite a sua idade para carta 1: ");
+    scanf("%d", &idade1);
+    printf("A idade é: %d\n", idade1);
+
+    printf("Digite sua altura para carta 1: ");
+    scanf("%f", &altura1);
+    printf("A sua altura é: %f\n", altura1);
+
+    printf("Digite seu nome para carta 1: ");
+    scanf("%s", nome1);
+    printf("A o nome é: %s\n",nome1 );
+
+
+
+
+    int idade2;
+    float altura2;
+    char nome2[20];
+
+    printf("Digite a sua idade para carta 2: ");
+    scanf("%d", &idade2);
+    printf("A idade é: %d\n", idade2);
+
+    printf("Digite sua altura para carta 2: ");
+    scanf("%f", &altura2);
+    printf("A sua altura é: %f\n", altura2);
+
+    printf("Digite seu nome para carta 2: ");
+    scanf("%s", nome2);
+    printf("A o nome é: %s\n",nome2);
+
+
+}
 
